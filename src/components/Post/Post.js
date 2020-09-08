@@ -1,5 +1,6 @@
 // @flow strict
 import React from 'react';
+import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import Author from './Author';
 import Comments from './Comments';
@@ -20,7 +21,7 @@ const Post = ({ post }: Props) => {
 
   return (
     <div className={styles['post']}>
-      <Link className={styles['post__home-button']} to="/">All Articles</Link>
+      <Link className={styles['post__home-button']} to="/">Home</Link>
 
       <div className={styles['post__content']}>
         <Content body={html} title={title} />
@@ -36,6 +37,7 @@ const Post = ({ post }: Props) => {
         <Comments postSlug={slug} postTitle={post.frontmatter.title} />
       </div>
     </div>
+
   );
 };
 

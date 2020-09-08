@@ -2,6 +2,7 @@
 import React from 'react';
 import { withPrefix, Link } from 'gatsby';
 import styles from './Author.module.scss';
+import DarkModeToggle from '../../DarkModeToggle';
 
 type Props = {
   author: {
@@ -24,15 +25,16 @@ const Author = ({ author, isIndex }: Props) => (
       />
     </Link>
 
-    { isIndex === true ? (
-      <h1 className={styles['author__title']}>
-        <Link className={styles['author__title-link']} to="/">{author.name}</Link>
-      </h1>
-    ) : (
-      <h2 className={styles['author__title']}>
-        <Link className={styles['author__title-link']} to="/">{author.name}</Link>
-      </h2>
-    )}
+    <div className={styles['author__title']}>
+        <h1>
+          <Link className={styles['author__title-link']} to="/">
+            {author.name}
+          </Link>
+        </h1>
+        <DarkModeToggle />
+      </div>
+      
+    
     <p className={styles['author__subtitle']}>{author.bio}</p>
   </div>
 );

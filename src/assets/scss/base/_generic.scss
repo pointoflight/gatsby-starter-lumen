@@ -130,6 +130,22 @@ blockquote {
   text-align: center;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: $color-primary;
+  color: var(--color-white);
+  font-size: $typographic-base-font-size * 0.75;
+  font-weight: bold;
+  padding: 10px 20px;
+  @include transition(background-color);
+
+  &:hover {
+    background-color: $color-secondary;
+    cursor: pointer;
+  }
+}
+
 figure {
   display: block;
   width: 100%;

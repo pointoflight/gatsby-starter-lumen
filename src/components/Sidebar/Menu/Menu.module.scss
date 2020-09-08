@@ -9,9 +9,11 @@
     padding: 0;
     margin: 0;
 
+
     &-item {
-      padding: 0;
+      padding: 0 10px;
       margin: 10px 0;
+  
 
       &-link {
         font-size: $typographic-base-font-size;
@@ -28,6 +30,7 @@
         &--active {
           color: $color-base;
           border-bottom: 1px solid $color-base;
+          font-weight: bold;
         }
 
       }
@@ -36,4 +39,36 @@
 
   }
 
+
+&.no-margin {
+    margin: 0;
+  }
+}
+
+.bold {
+  font-weight: 600;
+}
+
+@include breakpoint-sm {
+  .menu {
+    @include margin-bottom(1);
+
+    &__list {
+      text-align: initial;
+
+      &-item {
+        padding: 0;
+        display: list-item;
+      }
+    }
+
+    &.horizontal {
+      margin: 0;
+
+      li {
+        display: inline-block;
+        @include margin-right(1);
+      }
+    }
+  }
 }

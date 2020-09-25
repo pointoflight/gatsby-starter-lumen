@@ -8,7 +8,7 @@ module.exports = {
   copyright: '© Vedant Chavda 2020',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-177007176-1',
   useKatex: false,
   menu: [
     {
@@ -18,16 +18,16 @@ module.exports = {
     {
       label: 'About',
       path: '/pages/about'
-    },
-    {
-      label: 'Contact',
-      path: '/pages/contacts'
     }
+    // {
+    //   label: 'Contact',
+    //   path: '/pages/contacts'
+    // }
   ],
   author: {
     name: 'Vedant Chavda',
     photo: '/photo.jpg',
-    bio: 'Research Intern @ MPI-SWS. CS\'22 at BITS Pilani. I blog about programming, research and life.',
+    bio: 'CS \'22 undergrad @ BITS Pilani. Previously @ MPI-SWS and CSIR-CEERI.',
     contacts: {
       email: '',
       facebook: '#',

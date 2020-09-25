@@ -1,110 +1,341 @@
 ---
-title: "Johannes Gutenberg: The Birth of Movable Type"
-date: "2017-08-18T22:12:03.284Z"
+title: "Automated Machine Learning (AutoML) Libraries for Python"
+date: "2019-11-18T22:12:03.284Z"
 template: "post"
 draft: false
-slug: "the-birth-of-movable-type"
-category: "Typography"
+slug: "auto-ml"
+category: "Machine Learning"
 tags:
-  - "Open source"
-  - "Gatsby"
-  - "Typography"
-description: "German inventor Johannes Gutenberg developed a method of movable type and used it to create one of the western world’s first major printed books, the “Forty–Two–Line” Bible."
+  - "Python"
+  - "Machine Learning"
+description: "AutoML provides tools to automatically discover good machine learning model pipelines for a dataset with very little user intervention."
 socialImage: "/media/gutenberg.jpg"
 ---
 
-German inventor Johannes Gutenberg developed a method of movable type and used it to create one of the western world’s first major printed books, the “Forty–Two–Line” Bible.
+AutoML provides tools to automatically discover good machine learning model pipelines for a dataset with very little user intervention.
 
-**Johannes Gensfleisch zur Laden zum Gutenberg** (c. 1398 – 1468) was a German blacksmith, goldsmith, printer, and publisher who introduced printing to Europe. His invention of mechanical movable type printing started the Printing Revolution and is widely regarded as the most important event of the modern period. It played a key role in the development of the Renaissance, Reformation, the Age of Enlightenment, and the Scientific revolution and laid the material basis for the modern knowledge-based economy and the spread of learning to the masses.
+It is ideal for domain experts new to machine learning or machine learning practitioners looking to get good results quickly for a predictive modeling task.
 
-<figure class="float-right" style="width: 240px">
-	<img src="/media/gutenberg.jpg" alt="Gutenberg">
-	<figcaption>Johannes Gutenberg</figcaption>
-</figure>
+Open-source libraries are available for using AutoML methods with popular machine learning libraries in Python, such as the scikit-learn machine learning library.
 
-With his invention of the printing press, Gutenberg was the first European to use movable type printing, in around 1439. Among his many contributions to printing are: the invention of a process for mass-producing movable type; the use of oil-based ink; and the use of a wooden printing press similar to the agricultural screw presses of the period. His truly epochal invention was the combination of these elements into a practical system that allowed the mass production of printed books and was economically viable for printers and readers alike. Gutenberg's method for making type is traditionally considered to have included a type metal alloy and a hand mould for casting type. The alloy was a mixture of lead, tin, and antimony that melted at a relatively low temperature for faster and more economical casting, cast well, and created a durable type.
+In this tutorial, you will discover how to use top open-source AutoML libraries for scikit-learn in Python.
 
-In Renaissance Europe, the arrival of mechanical movable type printing introduced the era of mass communication which permanently altered the structure of society. The relatively unrestricted circulation of information — including revolutionary ideas — transcended borders, captured the masses in the Reformation and threatened the power of political and religious authorities; the sharp increase in literacy broke the monopoly of the literate elite on education and learning and bolstered the emerging middle class. Across Europe, the increasing cultural self-awareness of its people led to the rise of proto-nationalism, accelerated by the flowering of the European vernacular languages to the detriment of Latin's status as lingua franca. In the 19th century, the replacement of the hand-operated Gutenberg-style press by steam-powered rotary presses allowed printing on an industrial scale, while Western-style printing was adopted all over the world, becoming practically the sole medium for modern bulk printing.
+After completing this tutorial, you will know:
 
-The use of movable type was a marked improvement on the handwritten manuscript, which was the existing method of book production in Europe, and upon woodblock printing, and revolutionized European book-making. Gutenberg's printing technology spread rapidly throughout Europe and later the world.
+-   AutoML are techniques for automatically and quickly discovering a well-performing machine learning model pipeline for a predictive modeling task.
+-   The three most popular AutoML libraries for Scikit-Learn are Hyperopt-Sklearn, Auto-Sklearn, and TPOT.
+-   How to use AutoML libraries to discover well-performing models for predictive modeling tasks in Python.
 
-His major work, the Gutenberg Bible (also known as the 42-line Bible), has been acclaimed for its high aesthetic and technical quality.
+Let’s get started.
 
-## Printing Press
+## Tutorial Overview
 
-Around 1439, Gutenberg was involved in a financial misadventure making polished metal mirrors (which were believed to capture holy light from religious relics) for sale to pilgrims to Aachen: in 1439 the city was planning to exhibit its collection of relics from Emperor Charlemagne but the event was delayed by one year due to a severe flood and the capital already spent could not be repaid. When the question of satisfying the investors came up, Gutenberg is said to have promised to share a “secret”. It has been widely speculated that this secret may have been the idea of printing with movable type. Also around 1439–1440, the Dutch Laurens Janszoon Coster came up with the idea of printing. Legend has it that the idea came to him “like a ray of light”.
+This tutorial is divided into four parts; they are:
 
-<figure class="float-left" style="width: 240px">
-	<img src="/media/printing-press.jpg" alt="Early Printing Press">
-	<figcaption>Early wooden printing press as depicted in 1568.</figcaption>
-</figure>
+1.  Automated Machine Learning
+2.  Auto-Sklearn
+3.  Tree-based Pipeline Optimization Tool (TPOT)
+4.  Hyperopt-Sklearn
 
-Until at least 1444 he lived in Strasbourg, most likely in the St. Arbogast parish. It was in Strasbourg in 1440 that Gutenberg is said to have perfected and unveiled the secret of printing based on his research, mysteriously entitled Kunst und Aventur (art and enterprise). It is not clear what work he was engaged in, or whether some early trials with printing from movable type may have been conducted there. After this, there is a gap of four years in the record. In 1448, he was back in Mainz, where he took out a loan from his brother-in-law Arnold Gelthus, quite possibly for a printing press or related paraphernalia. By this date, Gutenberg may have been familiar with intaglio printing; it is claimed that he had worked on copper engravings with an artist known as the Master of Playing Cards.
+## Automated Machine Learning
 
-By 1450, the press was in operation, and a German poem had been printed, possibly the first item to be printed there. Gutenberg was able to convince the wealthy moneylender Johann Fust for a loan of 800 guilders. Peter Schöffer, who became Fust’s son-in-law, also joined the enterprise. Schöffer had worked as a scribe in Paris and is believed to have designed some of the first typefaces.
+Automated Machine Learning, or AutoML for short, involves the automatic selection of data preparation, machine learning model, and model hyperparameters for a predictive modeling task.
 
-<figure>
-	<blockquote>
-		<p>All that has been written to me about that marvelous man seen at Frankfurt is true. I have not seen complete Bibles but only a number of quires of various books of the Bible. The script was very neat and legible, not at all difficult to follow—your grace would be able to read it without effort, and indeed without glasses.</p>
-		<footer>
-			<cite>—Future pope Pius II in a letter to Cardinal Carvajal, March 1455</cite>
-		</footer>
-	</blockquote>
-</figure>
+It refers to techniques that allow semi-sophisticated machine learning practitioners and non-experts to discover a good predictive model pipeline for their machine learning task quickly, with very little intervention other than providing a dataset.
 
-Gutenberg's workshop was set up at Hof Humbrecht, a property belonging to a distant relative. It is not clear when Gutenberg conceived the Bible project, but for this he borrowed another 800 guilders from Fust, and work commenced in 1452. At the same time, the press was also printing other, more lucrative texts (possibly Latin grammars). There is also some speculation that there may have been two presses, one for the pedestrian texts, and one for the Bible. One of the profit-making enterprises of the new press was the printing of thousands of indulgences for the church, documented from 1454–55.
+> … the user simply provides data, and the AutoML system automatically determines the approach that performs best for this particular application. Thereby, AutoML makes state-of-the-art machine learning approaches accessible to domain scientists who are interested in applying machine learning but do not have the resources to learn about the technologies behind it in detail.
 
-In 1455 Gutenberg completed his 42-line Bible, known as the Gutenberg Bible. About 180 copies were printed, most on paper and some on vellum.
+— Page ix,  [Automated Machine Learning: Methods, Systems, Challenges](https://amzn.to/2w2gVf4s), 2019.
 
-## Court Case
+Central to the approach is defining a large hierarchical optimization problem that involves identifying data transforms and the machine learning models themselves, in addition to the hyperparameters for the models.
 
-Some time in 1456, there was a dispute between Gutenberg and Fust, and Fust demanded his money back, accusing Gutenberg of misusing the funds. Meanwhile the expenses of the Bible project had proliferated, and Gutenberg's debt now exceeded 20,000 guilders. Fust sued at the archbishop's court. A November 1455 legal document records that there was a partnership for a "project of the books," the funds for which Gutenberg had used for other purposes, according to Fust. The court decided in favor of Fust, giving him control over the Bible printing workshop and half of all printed Bibles.
+Many companies now offer AutoML as a service, where a dataset is uploaded and a model pipeline can be downloaded or hosted and used via web service (i.e. MLaaS). Popular examples include service offerings from Google, Microsoft, and Amazon.
 
-Thus Gutenberg was effectively bankrupt, but it appears he retained (or re-started) a small printing shop, and participated in the printing of a Bible in the town of Bamberg around 1459, for which he seems at least to have supplied the type. But since his printed books never carry his name or a date, it is difficult to be certain, and there is consequently a considerable scholarly debate on this subject. It is also possible that the large Catholicon dictionary, 300 copies of 754 pages, printed in Mainz in 1460, may have been executed in his workshop.
+Additionally, open-source libraries are available that implement AutoML techniques, focusing on the specific data transforms, models, and hyperparameters used in the search space and the types of algorithms used to navigate or optimize the search space of possibilities, with versions of  [Bayesian Optimization](https://machinelearningmastery.com/what-is-bayesian-optimization/)  being the most common.
 
-Meanwhile, the Fust–Schöffer shop was the first in Europe to bring out a book with the printer's name and date, the Mainz Psalter of August 1457, and while proudly proclaiming the mechanical process by which it had been produced, it made no mention of Gutenberg.
+There are many open-source AutoML libraries, although, in this tutorial, we will focus on the best-of-breed libraries that can be used in conjunction with the popular scikit-learn Python machine learning library.
 
-## Later Life
+They are: Hyperopt-Sklearn, Auto-Sklearn, and TPOT.
 
-In 1462, during a conflict between two archbishops, Mainz was sacked by archbishop Adolph von Nassau, and Gutenberg was exiled. An old man by now, he moved to Eltville where he may have initiated and supervised a new printing press belonging to the brothers Bechtermünze.
+We will take a closer look at each, providing the basis for you to evaluate and consider which library might be appropriate for your project.
 
-In January 1465, Gutenberg's achievements were recognized and he was given the title Hofmann (gentleman of the court) by von Nassau. This honor included a stipend, an annual court outfit, as well as 2,180 litres of grain and 2,000 litres of wine tax-free. It is believed he may have moved back to Mainz around this time, but this is not certain.
+## Auto-Sklearn
 
-***
+Auto-Sklearn is an open-source Python library for AutoML using machine learning models from the scikit-learn machine learning library.
 
-Gutenberg died in 1468 and was buried in the Franciscan church at Mainz, his contributions largely unknown. This church and the cemetery were later destroyed, and Gutenberg's grave is now lost.
+It was developed by  [Matthias Feurer](https://ml.informatik.uni-freiburg.de/people/feurer/index.html), et al. and described in their 2015 paper titled “[Efficient and Robust Automated Machine Learning](https://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning).”
 
-In 1504, he was mentioned as the inventor of typography in a book by Professor Ivo Wittig. It was not until 1567 that the first portrait of Gutenberg, almost certainly an imaginary reconstruction, appeared in Heinrich Pantaleon's biography of famous Germans.
+> … we introduce a robust new AutoML system based on scikit-learn (using 15 classifiers, 14 feature preprocessing methods, and 4 data preprocessing methods, giving rise to a structured hypothesis space with 110 hyperparameters).
 
-## Printing Method With Movable Type
+—  [Efficient and Robust Automated Machine Learning](https://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning), 2015.
 
-Gutenberg's early printing process, and what tests he may have made with movable type, are not known in great detail. His later Bibles were printed in such a way as to have required large quantities of type, some estimates suggesting as many as 100,000 individual sorts. Setting each page would take, perhaps, half a day, and considering all the work in loading the press, inking the type, pulling the impressions, hanging up the sheets, distributing the type, etc., it is thought that the Gutenberg–Fust shop might have employed as many as 25 craftsmen.
+The first step is to install the Auto-Sklearn library, which can be achieved using pip, as follows:
+```python
+sudo pip install autosklearn
+```
 
-![Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5](/media/movable-type.jpg)
+Once installed, we can import the library and print the version number to confirm it was installed successfully:
 
-*Movable metal type, and composing stick, descended from Gutenberg's press. Photo by Willi Heidelbach. Licensed under CC BY 2.5*
+```python
+# print autosklearn version
+import autosklearn
+print('autosklearn: %s' % autosklearn.__version__)
+```
 
-Gutenberg's technique of making movable type remains unclear. In the following decades, punches and copper matrices became standardized in the rapidly disseminating printing presses across Europe. Whether Gutenberg used this sophisticated technique or a somewhat primitive version has been the subject of considerable debate.
+Running the example prints the version number. Your version number should be the same or higher.
+```python
+autosklearn: 0.6.0
+```
+Next, we can demonstrate using Auto-Sklearn on a synthetic classification task.
 
-In the standard process of making type, a hard metal punch (made by punchcutting, with the letter carved back to front) is hammered into a softer copper bar, creating a matrix. This is then placed into a hand-held mould and a piece of type, or "sort", is cast by filling the mould with molten type-metal; this cools almost at once, and the resulting piece of type can be removed from the mould. The matrix can be reused to create hundreds, or thousands, of identical sorts so that the same character appearing anywhere within the book will appear very uniform, giving rise, over time, to the development of distinct styles of typefaces or fonts. After casting, the sorts are arranged into type-cases, and used to make up pages which are inked and printed, a procedure which can be repeated hundreds, or thousands, of times. The sorts can be reused in any combination, earning the process the name of “movable type”.
+We can define an AutoSklearnClassifier class that controls the search and configure it to run for two minutes (120 seconds) and kill any single model that takes more than 30 seconds to evaluate. At the end of the run, we can report the statistics of the search and evaluate the best performing model on a holdout dataset.
 
-The invention of the making of types with punch, matrix and mold has been widely attributed to Gutenberg. However, recent evidence suggests that Gutenberg's process was somewhat different. If he used the punch and matrix approach, all his letters should have been nearly identical, with some variations due to miscasting and inking. However, the type used in Gutenberg's earliest work shows other variations.
+The complete example is listed below.
+```python 
+# example of auto-sklearn for a classification dataset
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from autosklearn.classification import AutoSklearnClassifier
+# define dataset
+X, y = make_classification(n_samples=100, n_features=10, n_informative=5, n_redundant=5, random_state=1)
+# split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
+# define search
+model = AutoSklearnClassifier(time_left_for_this_task=2*60, per_run_time_limit=30, n_jobs=8)
+# perform the search
+model.fit(X_train, y_train)
+# summarize
+print(model.sprint_statistics())
+# evaluate best model
+y_hat = model.predict(X_test)
+acc = accuracy_score(y_test, y_hat)
+print("Accuracy: %.3f" % acc)
+```
 
-<figure>
-	<blockquote>
-		<p>It is a press, certainly, but a press from which shall flow in inexhaustible streams… Through it, god will spread his word.</p>
-		<footer>
-			<cite>—Johannes Gutenberg</cite>
-		</footer>
-	</blockquote>
-</figure>
 
-In 2001, the physicist Blaise Agüera y Arcas and Princeton librarian Paul Needham, used digital scans of a Papal bull in the Scheide Library, Princeton, to carefully compare the same letters (types) appearing in different parts of the printed text. The irregularities in Gutenberg's type, particularly in simple characters such as the hyphen, suggested that the variations could not have come from either ink smear or from wear and damage on the pieces of metal on the types themselves. While some identical types are clearly used on other pages, other variations, subjected to detailed image analysis, suggested that they could not have been produced from the same matrix. Transmitted light pictures of the page also appeared to reveal substructures in the type that could not arise from traditional punchcutting techniques. They hypothesized that the method may have involved impressing simple shapes to create alphabets in “cuneiform” style in a matrix made of some soft material, perhaps sand. Casting the type would destroy the mould, and the matrix would need to be recreated to make each additional sort. This could explain the variations in the type, as well as the substructures observed in the printed images.
+Running the example will take about two minutes, given the hard limit we imposed on the run.
 
-Thus, they feel that “the decisive factor for the birth of typography”, the use of reusable moulds for casting type, might have been a more progressive process than was previously thought. They suggest that the additional step of using the punch to create a mould that could be reused many times was not taken until twenty years later, in the 1470s. Others have not accepted some or all of their suggestions, and have interpreted the evidence in other ways, and the truth of the matter remains very uncertain.
+At the end of the run, a summary is printed showing that 599 models were evaluated and the estimated performance of the final model was 95.6 percent.
+```python 
+auto-sklearn results:
+Dataset name: 771625f7c0142be6ac52bcd108459927
+Metric: accuracy
+Best validation score: 0.956522
+Number of target algorithm runs: 653
+Number of successful target algorithm runs: 599
+Number of crashed target algorithm runs: 54
+Number of target algorithms that exceeded the time limit: 0
+Number of target algorithms that exceeded the memory limit: 0
+```
 
-A 1568 history by Hadrianus Junius of Holland claims that the basic idea of the movable type came to Gutenberg from Laurens Janszoon Coster via Fust, who was apprenticed to Coster in the 1430s and may have brought some of his equipment from Haarlem to Mainz. While Coster appears to have experimented with moulds and castable metal type, there is no evidence that he had actually printed anything with this technology. He was an inventor and a goldsmith. However, there is one indirect supporter of the claim that Coster might be the inventor. The author of the Cologne Chronicle of 1499 quotes Ulrich Zell, the first printer of Cologne, that printing was performed in Mainz in 1450, but that some type of printing of lower quality had previously occurred in the Netherlands. However, the chronicle does not mention the name of Coster, while it actually credits Gutenberg as the "first inventor of printing" in the very same passage (fol. 312). The first securely dated book by Dutch printers is from 1471, and the Coster connection is today regarded as a mere legend.
+We then evaluate the model on the holdout dataset and see that a classification accuracy of 97 percent was achieved, which is reasonably skillful.
+```python
+Accuracy: 0.970
+```
 
-The 19th century printer and typefounder Fournier Le Jeune suggested that Gutenberg might not have been using type cast with a reusable matrix, but possibly wooden types that were carved individually. A similar suggestion was made by Nash in 2004. This remains possible, albeit entirely unproven.
+For more on the Auto-Sklearn library, see:
 
-It has also been questioned whether Gutenberg used movable types at all. In 2004, Italian professor Bruno Fabbiani claimed that examination of the 42-line Bible revealed an overlapping of letters, suggesting that Gutenberg did not in fact use movable type (individual cast characters) but rather used whole plates made from a system somewhat like a modern typewriter, whereby the letters were stamped successively into the plate and then printed. However, most specialists regard the occasional overlapping of type as caused by paper movement over pieces of type of slightly unequal height.
+-   [Auto-Sklearn Homepage](https://automl.github.io/auto-sklearn/master/).
+-   [Auto-Sklearn GitHub Project](https://github.com/automl/auto-sklearn).
+
+## Tree-based Pipeline Optimization Tool (TPOT)
+
+Tree-based Pipeline Optimization Tool, or  [TPOT](https://epistasislab.github.io/tpot/)  for short, is a Python library for automated machine learning.
+
+TPOT uses a tree-based structure to represent a model pipeline for a predictive modeling problem, including data preparation and modeling algorithms, and model hyperparameters.
+
+> … an evolutionary algorithm called the Tree-based Pipeline Optimization Tool (TPOT) that automatically designs and optimizes machine learning pipelines.
+
+—  [Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science](https://dl.acm.org/doi/10.1145/2908812.2908918), 2016.
+
+The first step is to install the TPOT library, which can be achieved using pip, as follows:
+```python
+pip install tpot
+```
+Once installed, we can import the library and print the version number to confirm it was installed successfully:
+```python
+# check tpot version
+import tpot
+print('tpot: %s'  %  tpot.__version__)
+```
+Running the example prints the version number. Your version number should be the same or higher.
+
+```python
+tpot: 0.11.1
+```
+Next, we can demonstrate using TPOT on a synthetic classification task.
+
+This involves configuring a TPOTClassifier instance with the population size and number of generations for the evolutionary search, as well as the cross-validation procedure and metric used to evaluate models. The algorithm will then run the search procedure and save the best discovered model pipeline to file.
+
+The complete example is listed below.
+```python
+# example of tpot for a classification dataset
+from sklearn.datasets import make_classification
+from sklearn.model_selection import RepeatedStratifiedKFold
+from tpot import TPOTClassifier
+# define dataset
+X,  y  =  make_classification(n_samples=100,  n_features=10,  n_informative=5,  n_redundant=5,  random_state=1)
+# define model evaluation
+cv  =  RepeatedStratifiedKFold(n_splits=10,  n_repeats=3,  random_state=1)
+# define search
+model  =  TPOTClassifier(generations=5,  population_size=50,  cv=cv,  scoring='accuracy',  verbosity=2,  random_state=1,  n_jobs=-1)
+# perform the search
+model.fit(X,  y)
+# export the best model
+model.export('tpot_best_model.py')
+```
+Running the example may take a few minutes, and you will see a progress bar on the command line.
+The accuracy of top-performing models will be reported along the way.
+Your specific results will vary given the stochastic nature of the search procedure.
+```python
+Generation 1 - Current best internal CV score: 0.9166666666666666
+Generation 2 - Current best internal CV score: 0.9166666666666666
+Generation 3 - Current best internal CV score: 0.9266666666666666
+Generation 4 - Current best internal CV score: 0.9266666666666666
+Generation 5 - Current best internal CV score: 0.9266666666666666
+
+Best pipeline: ExtraTreesClassifier(input_matrix, bootstrap=False, criterion=gini, max_features=0.35000000000000003, min_samples_leaf=2, min_samples_split=6, n_estimators=100)
+```
+In this case, we can see that the top-performing pipeline achieved the mean accuracy of about 92.6 percent.
+
+The top-performing pipeline is then saved to a file named “_tpot_best_model.py_“.
+
+Opening this file, you can see that there is some generic code for loading a dataset and fitting the pipeline. An example is listed below.
+
+```python
+import numpy as  np
+import pandas as  pd
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.model_selection import train_test_split
+# NOTE: Make sure that the outcome column is labeled 'target' in the data file
+tpot_data  =  pd.read_csv('PATH/TO/DATA/FILE',  sep='COLUMN_SEPARATOR',  dtype=np.float64)
+features  =  tpot_data.drop('target',  axis=1)
+training_features,  testing_features,  training_target,  testing_target  =  \
+train_test_split(features,  tpot_data['target'],  random_state=1)
+# Average CV score on the training set was: 0.9266666666666666
+exported_pipeline  =  ExtraTreesClassifier(bootstrap=False,  criterion="gini",  max_features=0.35000000000000003,  min_samples_leaf=2,  min_samples_split=6,  n_estimators=100)
+# Fix random state in exported estimator
+if  hasattr(exported_pipeline,  'random_state'):
+setattr(exported_pipeline,  'random_state',  1)
+exported_pipeline.fit(training_features,  training_target)
+results  =  exported_pipeline.predict(testing_features)
+```
+You can then retrieve the code for creating the model pipeline and integrate it into your project.
+
+For more on TPOT, see the following resources:
+
+-   [Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science](https://dl.acm.org/doi/10.1145/2908812.2908918), 2016.
+-   [TPOT Documentation](https://epistasislab.github.io/tpot/).
+-   [TPOT GitHub Project](https://github.com/EpistasisLab/tpot).
+
+## Hyperopt-Sklearn
+
+[HyperOpt](http://hyperopt.github.io/hyperopt/)  is an open-source Python library for Bayesian optimization developed by  [James Bergstra](https://www.linkedin.com/in/james-bergstra).
+
+It is designed for large-scale optimization for models with hundreds of parameters and allows the optimization procedure to be scaled across multiple cores and multiple machines.
+
+HyperOpt-Sklearn wraps the HyperOpt library and allows for the automatic search of data preparation methods, machine learning algorithms, and model hyperparameters for classification and regression tasks.
+
+> … we introduce Hyperopt-Sklearn: a project that brings the benefits of automatic algorithm configuration to users of Python and scikit-learn. Hyperopt-Sklearn uses Hyperopt to describe a search space over possible configurations of Scikit-Learn components, including preprocessing and classification modules.
+
+—  [Hyperopt-Sklearn: Automatic Hyperparameter Configuration for Scikit-Learn](https://conference.scipy.org/proceedings/scipy2014/pdfs/komer.pdf), 2014.
+
+Now that we are familiar with HyperOpt and HyperOpt-Sklearn, let’s look at how to use HyperOpt-Sklearn.
+
+The first step is to install the HyperOpt library.
+
+This can be achieved using the pip package manager as follows:
+```python
+sudo pip install hyperopt
+```
+Next, we must install the HyperOpt-Sklearn library.
+
+This too can be installed using pip, although we must perform this operation manually by cloning the repository and running the installation from the local files, as follows:
+```
+git clone git@github.com:hyperopt/hyperopt-sklearn.git
+cd hyperopt-sklearn
+sudo pip install .
+cd ..
+```
+We can confirm that the installation was successful by checking the version number with the following command:
+```
+sudo pip show hpsklearn
+```
+This will summarize the installed version of HyperOpt-Sklearn, confirming that a modern version is being used.
+```python
+Name: hpsklearn
+Version: 0.0.3
+Summary: Hyperparameter Optimization for sklearn
+Home-page: http://hyperopt.github.com/hyperopt-sklearn/
+Author: James Bergstra
+Author-email: anon@anon.com
+License: BSD
+Location: ...
+Requires: nose, scikit-learn, numpy, scipy, hyperopt
+Required-by:
+```
+Next, we can demonstrate using Hyperopt-Sklearn on a synthetic classification task.
+
+We can configure a HyperoptEstimator instance that runs the search, including the classifiers to consider in the search space, the pre-processing steps, and the search algorithm to use. In this case, we will use TPE, or Tree of Parzen Estimators, and perform 50 evaluations.
+
+At the end of the search, the best performing model pipeline is evaluated and summarized.
+
+The complete example is listed below.
+```python
+# example of hyperopt-sklearn for a classification dataset
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from hpsklearn import HyperoptEstimator
+from hpsklearn import any_classifier
+from hpsklearn import any_preprocessing
+from hyperopt import tpe
+# define dataset
+X,  y  =  make_classification(n_samples=100,  n_features=10,  n_informative=5,  n_redundant=5,  random_state=1)
+# split into train and test sets
+X_train,  X_test,  y_train,  y_test  =  train_test_split(X,  y,  test_size=0.33,  random_state=1)
+# define search
+model  =  HyperoptEstimator(classifier=any_classifier('cla'),  preprocessing=any_preprocessing('pre'),  algo=tpe.suggest,  max_evals=50,  trial_timeout=30)
+# perform the search
+model.fit(X_train,  y_train)
+# summarize performance
+acc  =  model.score(X_test,  y_test)
+print("Accuracy: %.3f"  %  acc)
+# summarize the best model
+print(model.best_model())
+```
+Running the example may take a few minutes.
+
+The progress of the search will be reported and you will see some warnings that you can safely ignore.
+
+At the end of the run, the best-performing model is evaluated on the holdout dataset and the Pipeline discovered is printed for later use.
+
+Your specific results may differ given the stochastic nature of the learning algorithm and search process. Try running the example a few times.
+
+In this case, we can see that the chosen model achieved an accuracy of about 84.8 percent on the holdout test set. The Pipeline involves a SGDClassifier model with no pre-processing.
+```python
+Accuracy: 0.848
+{'learner': SGDClassifier(alpha=0.0012253733891387925, average=False,
+class_weight='balanced', early_stopping=False, epsilon=0.1,
+eta0=0.0002555872679483392, fit_intercept=True,
+l1_ratio=0.628343459087075, learning_rate='optimal',
+loss='perceptron', max_iter=64710625.0, n_iter_no_change=5,
+n_jobs=1, penalty='l2', power_t=0.42312829309173644,
+random_state=1, shuffle=True, tol=0.0005437535215080966,
+validation_fraction=0.1, verbose=False, warm_start=False), 'preprocs': (), 'ex_preprocs': ()}
+```
+The printed model can then be used directly, e.g. the code copy-pasted into another project.
+For more on Hyperopt-Sklearn, see:
+
+-   [Hyperopt-Sklearn Homepage](http://hyperopt.github.io/hyperopt-sklearn/).
+-   [Hyperopt-Sklearn GitHub Project](https://github.com/hyperopt/hyperopt-sklearn).
+
+## Summary
+
+In this tutorial, you discovered how to use top open-source AutoML libraries for scikit-learn in Python.
+
+Specifically, you learned:
+
+-   AutoML are techniques for automatically and quickly discovering a well-performing machine learning model pipeline for a predictive modeling task.
+-   The three most popular AutoML libraries for Scikit-Learn are Hyperopt-Sklearn, Auto-Sklearn, and TPOT.
+-   How to use AutoML libraries to discover well-performing models for predictive modeling tasks in Python.

@@ -31,7 +31,7 @@ const getContactHref = (name: string, contact: string) => {
       href = `https://www.facebook.com/${contact}`;
       break;
     case 'gitlab':
-      href = `https://www.gitlab.com/${contact}`;
+      href = `https://gitlab.mpi-sws.org/${contact}`;
       break;
     // case 'weibo':
     //   href = `https://www.weibo.com/${contact}`;

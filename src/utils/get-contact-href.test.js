@@ -12,7 +12,7 @@ test('getContactHref', () => {
   //expect(getContactHref('instagram', '#')).toBe('https://www.instagram.com/#');
   //expect(getContactHref('line', '#')).toBe('line://ti/p/#');
   expect(getContactHref('facebook', '#')).toBe('https://www.facebook.com/#');
-  expect(getContactHref('gitlab', '#')).toBe('https://www.gitlab.com/#');
+  expect(getContactHref('gitlab', '#')).toBe('https://gitlab.mpi-sws.org/#');
   // expect(getContactHref('weibo', '#')).toBe('https://www.weibo.com/#');
   // expect(getContactHref('codepen', '#')).toBe('https://www.codepen.io/#');
   // expect(getContactHref('youtube', '#')).toBe('https://www.youtube.com/channel/#');

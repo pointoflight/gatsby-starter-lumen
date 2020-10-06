@@ -14,7 +14,7 @@ Here I blog about research, life, career and various topics in computer science 
 
 If you want to reach out to me - 
 
-- feel free to email me at [vedantc108@gmail.com](mailto:vedantc108@gmail.com).
+- feel free to email me at [f20180209@goa.bits-pilani.ac.in](mailto:f20180209@goa.bits-pilani.ac.in).
 
 - connect with me on [LinkedIn](https://www.linkedin.com/in/vedant-chavda/).
 

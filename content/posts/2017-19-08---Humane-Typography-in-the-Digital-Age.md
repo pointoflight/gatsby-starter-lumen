@@ -28,9 +28,9 @@ It's often more useful to use the **one-hot encoding** instead:
 
 | Color | Integer Encoding | One-Hot Encoding |
 | --- | --- | --- |
-| Red | 0 | $$[1, 0, 0]$$ |
-| Green | 1 | $$[0, 1, 0]$$ |
-| Blue | 2 | $$[0, 0, 1]$$ |
+| Red | 0 | [1, 0, 0] |
+| Green | 1 | [0, 1, 0] |
+| Blue | 2 | [0, 0, 1] |
 
 This is much more useful to pass into something like a [neural network](/blog/intro-to-neural-networks/).
 

@@ -1,4 +1,4 @@
-/** 
+/**
  * Generic
  */
 html {
@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  margin: 0 0 0 calc(100vw - 100%);
+  margin: 0;
   font-family: $typographic-font-family;
   color: $typographic-base-font-color;
   line-height: $typographic-base-line-height;
@@ -18,12 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $typographic-font-family;
   font-weight: 600;
 }
@@ -31,42 +26,42 @@ h6 {
 h1 {
   font-size: $typographic-base-font-size * 2.5;
   @include line-height(2);
-  @include margin-top(4);
+  @include margin-top(3);
   @include margin-bottom(1);
 }
 
 h2 {
   font-size: $typographic-base-font-size * 1.6875;
   @include line-height(1.5);
-  @include margin-top(2);
+  @include margin-top(1.5);
   @include margin-bottom(.5);
 }
 
 h3 {
   font-size: $typographic-base-font-size * 1.375;
   @include line-height(1);
-  @include margin-top(2);
+  @include margin-top(1.5);
   @include margin-bottom(.5);
 }
 
 h4 {
   font-size: $typographic-base-font-size * 1.2;
   @include line-height(1);
-  @include margin-top(1.5);
+  @include margin-top(1.125);
   @include margin-bottom(.5);
 }
 
 h5 {
   font-size: $typographic-base-font-size;
   @include line-height(1);
-  @include margin-top(2.5);
+  @include margin-top(1.875);
   @include margin-bottom(.5);
 }
 
 h6 {
   font-size: $typographic-base-font-size;
   @include line-height(1);
-  @include margin-top(2.5);
+  @include margin-top(1.875);
   @include margin-bottom(.5);
 }
 
@@ -78,55 +73,58 @@ img {
 }
 
 hr {
-  margin-top: 52px;
-  margin-bottom: 52px;
-  border: 0;
-  color: $color-base;
-  display: block;
-  height: 26px;
+  @include margin-top(2);
+  @include margin-bottom(2);
   margin-right: auto;
   margin-left: auto;
-  background-size: 100% 26px;
-  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, $color-base 11px, $color-base 15px, transparent 15px, transparent 26px);
-  width: 100px;
+  border: 0;
+  display: block;
+  height: 2px;
+  background-color: $color-gray;
 }
 
 a {
   color: $typographic-link-p-font-color;
   text-decoration: none;
+  @include transition(color);
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover, &:focus, &:active {
     color: $typographic-link-s-font-color;
   }
-
 }
 
-b,
-strong {
-  font-weight: 600;
+b, strong {
+  font-weight: bold;
 }
 
-ul {
-  list-style: square;
+ul, ol {
   @include margin-bottom(1);
+  @include padding-equal(0);
 
   & li {
-    padding: 0 5px;
-    margin-bottom: 10px;
+    padding: 0;
+    margin-bottom: 12px;
+    margin-left: 30px;
   }
-
 }
 
 p {
   @include line-height(1);
-  @include margin-bottom(1);
+  @include margin-bottom(0.75);
 }
 
-blockquote {
-  padding: 0;
-  font-style: italic;
+figure {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  @include line-height(.75);
+  @include margin-top(.25);
+  @include margin-bottom(.25);
+  color: $color-base;
+  font-size: $typographic-small-font-size;
   text-align: center;
 }
 
@@ -146,27 +144,6 @@ button {
   }
 }
 
-figure {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-figcaption {
-  @include line-height(.75);
-  @include margin-top(.25);
-  color: $color-base;
-  font-size: $typographic-small-font-size;
-  font-style: italic;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.anchor {
-  margin-left: -30px !important;
-  padding-right: 14px !important;
-}
-
 @include breakpoint-sm {
   figure.float-left,
   figure.float-right {
@@ -181,5 +158,49 @@ figcaption {
   .float-left {
     float: left;
   }
+}
 
+input {
+  border: none;
+  outline: none;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@include breakpoint-md {
+  h1 {
+    @include margin-top(4);
+  }
+
+  h2 {
+    @include margin-top(2);
+  }
+
+  h3 {
+    @include margin-top(2);
+  }
+
+  h4 {
+    @include margin-top(1.5);
+  }
+
+  h5 {
+    @include margin-top(2.5);
+  }
+
+  h6 {
+    @include margin-top(2.5);
+  }
+
+  p {
+    @include margin-bottom(1.125);
+  }
+
+  button {
+    font-size: $typographic-base-font-size * 0.9;
+    padding: 15px 30px;
+  }
 }

@@ -1,5 +1,5 @@
 ---
-title: One-Hot Encoding, Explained
+title: Why One-Hot Encoding?
 date: "2019-08-19T22:40:32.169Z"
 template: "post"
 draft: false

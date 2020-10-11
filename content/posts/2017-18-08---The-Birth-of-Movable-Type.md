@@ -1,5 +1,5 @@
 ---
-title: "Automated Machine Learning (AutoML) Libraries for Python"
+title: "AutoML Libraries for Python"
 date: "2019-11-18T22:12:03.284Z"
 template: "post"
 draft: false

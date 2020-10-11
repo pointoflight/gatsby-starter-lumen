@@ -4,7 +4,7 @@ template: "page"
 socialImage: "/media/image-2.jpg"
 ---
 
-I'm a computer science undergraduate at [BITS Pilani, Goa Campus](https://www.bits-pilani.ac.in/goa/ "BITS Pilani, Goa Homepage"). I like to do research as well as development work. 
+I'm a junior computer science undergraduate at [BITS Pilani, Goa Campus](https://www.bits-pilani.ac.in/goa/ "BITS Pilani, Goa Homepage"). I like to do research as well as development work. 
 
 I was a research fellow at the [Max Planck Institute for Software Systems](https://www.mpi-sws.org/ "MPI-SWS's Homepage")  in the Real Time Systems group under [Dr. Björn Brandenburg](https://people.mpi-sws.org/~bbb/ "Björn's Homepage") , where I worked on formal analysis of real time systems. 
 

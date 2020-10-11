@@ -55,10 +55,6 @@ In applied machine learning, we run a machine learning “_algorithm_” on a da
 -   **Algorithm**: Procedure run on data that results in a model (e.g. training or learning).
 -   **Model**: Data structure and coefficients used to make predictions on data.
 
-For more on the difference between machine learning algorithms and models, see the tutorial:
-
--   [Difference Between Algorithm and Model in Machine Learning](https://machinelearningmastery.com/difference-between-algorithm-and-model-in-machine-learning/)
-
 Supervised machine learning means we have examples (rows) with input and output variables (columns). We cannot write code to predict outputs given inputs because it is too hard, so we use machine learning algorithms to learn how to predict outputs from inputs given historical examples.
 
 This is called  [function approximation](https://machinelearningmastery.com/neural-networks-are-function-approximators/), and we are learning or searching for a function that maps inputs to outputs on our specific prediction task in such a way that it has skill, meaning the performance of the mapping is better than random and ideally better than all other algorithms and algorithm configurations we have tried.
@@ -100,10 +96,6 @@ A more sensitive algorithm has a larger variance, which will result in more diff
 -   **High Variance**: Algorithm is more sensitive to the specific data used during training.
 -   **Low Variance**: Algorithm is less sensitive to the specific data used during training.
 
-For more on the variance and the bias-variance trade-off, see the tutorial:
-
--   [Gentle Introduction to the Bias-Variance Trade-Off in Machine Learning](https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)
-
 All useful machine learning algorithms will have some variance, and some of the most effective algorithms will have a high variance.
 
 Algorithms with a high variance often require more training data than those algorithms with less variance. This is intuitive if we consider the model approximating a mapping function from inputs and outputs and the  [law of large numbers](https://machinelearningmastery.com/a-gentle-introduction-to-the-law-of-large-numbers-in-machine-learning/).
@@ -140,19 +132,11 @@ Some algorithms are not deterministic; instead, they are stochastic. This means 
 
 The impact is that each time the stochastic machine learning algorithm is run on the same data, it learns a slightly different model. In turn, the model may make slightly different predictions, and when evaluated using error or accuracy, may have a slightly different performance.
 
-For more on stochastic and what it means in machine learning, see the tutorial:
-
--   [What Does Stochastic Mean in Machine Learning?](https://machinelearningmastery.com/stochastic-in-machine-learning/)
-
 Adding randomness to some of the decisions made by an algorithm can improve performance on hard problems. Learning a supervised learning mapping function with a limited sample of data from the domain is a very  [hard problem](https://machinelearningmastery.com/applied-machine-learning-is-hard/).
 
 Finding a good or best mapping function for a dataset is a type of search problem. We test different algorithms and test algorithm configurations that define the shape of the search space and give us a starting point in the search space. We then run the algorithms, which then navigate the search space to a single model.
 
 Adding randomness can help avoid the good solutions and help find the really good and great solutions in the search space. They allow the model to escape local optima or deceptive local optima where the learning algorithm might get such, and help find better solutions, even a global optima.
-
-For more on thinking about supervised learning as a search problem, see the tutorial:
-
--   [A Gentle Introduction to Applied Machine Learning as a Search Problem](https://machinelearningmastery.com/applied-machine-learning-as-a-search-problem/)
 
 An example of an algorithm that uses randomness during learning is a neural network. It uses randomness in two ways:
 
@@ -161,27 +145,15 @@ An example of an algorithm that uses randomness during learning is a neural netw
 
 Neural networks (deep learning) are a stochastic machine learning algorithm. The random initial weights allow the model to try learning from a different starting point in the search space each algorithm run and allow the learning algorithm to “_break symmetry_” during learning. The random shuffle of examples during training ensures that each gradient estimate and weight update is slightly different.
 
-For more on the stochastic nature of neural networks, see the tutorial:
-
--   [Why Initialize a Neural Network With Random Weights?](https://machinelearningmastery.com/why-initialize-a-neural-network-with-random-weights/)
-
 Another example is ensemble machine learning algorithms that are stochastic, such as bagging.
 
 Randomness is used in the sampling procedure of the training dataset that ensures a different decision tree is prepared for each contributing member in the ensemble. In ensemble learning, this is called ensemble diversity and is an approach to simulating independent predictions from a single training dataset.
-
-For more on the stochastic nature of bagging ensembles, see the tutorial:
-
--   [How to Develop a Bagging Ensemble With Python](https://machinelearningmastery.com/bagging-ensemble-with-python/)
 
 ### What Should I Do?
 
 The randomness used by learning algorithms can be controlled.
 
 For example, you set the seed used by the pseudorandom number generator to ensure that each time the algorithm is run, it gets the same randomness.
-
-For more on random number generators and setting fixing the seed, see the tutorial:
-
--   [Introduction to Random Number Generators for Machine Learning in Python](https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/)
 
 This can be a good approach for tutorials, but not a good approach in practice. It leads to questions like:
 
@@ -195,17 +167,9 @@ A better approach is to embrace the stochastic nature of machine learning algori
 
 Consider that there is not a single model for your dataset. Instead, there is a stochastic process (the algorithm pipeline) that can generate models for your problem.
 
-For more on this, see the tutorial:
-
--   [Embrace Randomness in Machine Learning](https://machinelearningmastery.com/randomness-in-machine-learning/)
-
 You can then summarize the performance of these models — of the algorithm pipeline — as a distribution with mean expected error or accuracy and a standard deviation.
 
 You can then ensure you achieve the average performance of the models by fitting multiple final models on your dataset and averaging their predictions when you need to make a prediction on new data.
-
-For more on the ensemble approach to final models, see the tutorial:
-
--   [How to Reduce Variance in a Final Machine Learning Model](https://machinelearningmastery.com/how-to-reduce-model-variance/)
 
 ## 4. Differences Caused by Evaluation Procedure
 
@@ -215,15 +179,7 @@ The two most common evaluation procedures are a train-test split and k-fold cros
 
 A  [train-test split](https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/)  involves randomly assigning rows to either be used to train the model or evaluate the model to meet a predefined train or test set size.
 
-For more on the train-test split, see the tutorial:
-
--   [Train-Test Split for Evaluating Machine Learning Algorithms](https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/)
-
 The k-fold cross-validation procedure involves dividing a dataset into k non-overlapping partitions and using one fold as the test set and all other folds as the training set. A model is fit on the training set and evaluated on the holdout fold and this process is repeated k times, giving each fold an opportunity to be used as the holdout fold.
-
-For more on k-fold cross-validation, see the tutorial:
-
--   [A Gentle Introduction to k-fold Cross-Validation](https://machinelearningmastery.com/k-fold-cross-validation/)
 
 Both of these model evaluation procedures are stochastic.
 
@@ -234,10 +190,6 @@ This use of randomness is a feature, not a bug.
 The use of randomness, in this case, allows the resampling to approximate an estimate of model performance that is independent of the specific data sample drawn from the domain. This approximation is biased because we only have a small sample of data to work with rather than the complete set of possible observations.
 
 Performance estimates provide an idea of the expected or average capability of the model when making predictions in the domain on data not seen during training. Regardless of the specific rows of data used to train or test the model, at least ideally.
-
-For more on the more general topic of statistical sampling, see the tutorial:
-
--   [A Gentle Introduction to Statistical Sampling and Resampling](https://machinelearningmastery.com/statistical-sampling-and-resampling/)
 
 As such, each evaluation of a deterministic machine learning algorithm, like a linear regression or a logistic regression, can give a different estimate of error or accuracy.
 
@@ -256,14 +208,6 @@ The idea is that each candidate solution (each algorithm or configuration) will 
 Embracing the randomness can also be appropriate. This involves repeating the evaluation procedure many times and reporting a summary of the distribution of performance scores, such as the mean and standard deviation.
 
 Perhaps the least biased approach to repeated evaluation would be to use  [repeated k-fold cross-validation](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/), such as three repeats with 10 folds (3×10), which is common, or five repeats with two folds (5×2), which is commonly used when comparing algorithms with statistical hypothesis tests.
-
-For a gentle introduction to using statistical hypothesis tests for comparing algoritms, see the tutorial:
-
--   [Statistical Significance Tests for Comparing Machine Learning Algorithms](https://machinelearningmastery.com/statistical-significance-tests-for-comparing-machine-learning-algorithms/)
-
-For a tutorial on comparing mean algorithm performance with a hypothesis test, see the tutorial:
-
--   [Hypothesis Test for Comparing Machine Learning Algorithms](https://machinelearningmastery.com/hypothesis-test-for-comparing-machine-learning-algorithms/)
 
 ## 5. Differences Caused by Platform
 
